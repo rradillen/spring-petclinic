@@ -32,9 +32,6 @@ jobs:
           cache: maven
       - name: Build with Gradle Wrapper
         run: ./gradlew build
-  docker:
-    runs-on: ubuntu-latest
-    steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
@@ -52,3 +49,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
